@@ -2,150 +2,136 @@
 <!doctype html>
 <html lang="kk">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#fffaf5">
 <title>Таир — 1 жас | Шақыру</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Great+Vibes&family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --cream: #fffaf5;
-  --blue: #8cb4cb;
-  --ink: #627c94;
-  --gold: #d1a46b;
+  --cream:#fffaf5;
+  --blue:#8cb4cb;
+  --ink:#627c94;
+  --gold:#d1a46b;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing:border-box; }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior:smooth; }
 
 body {
-  margin: 0;
-  color: var(--ink);
-  font-family: Manrope, Arial, sans-serif;
-  background: var(--cream);
-  overflow-x: hidden;
+  margin:0;
+  color:var(--ink);
+  font-family:Manrope,Arial,sans-serif;
+  background:var(--cream);
+  overflow-x:hidden;
 }
 
 section {
-  position: relative;
-  padding: 76px 20px;
-  overflow: hidden;
+  position:relative;
+  padding:76px 20px;
+  overflow:hidden;
 }
 
 .inner {
-  width: min(100%, 660px);
-  margin: auto;
-  text-align: center;
-  position: relative;
-  z-index: 2;
+  width:min(100%,660px);
+  margin:auto;
+  text-align:center;
+  position:relative;
+  z-index:2;
 }
 
-button, input {
-  font: inherit;
-}
+button,input { font:inherit; }
 
 .title {
-  font-family: 'Bad Script', cursive;
-  color: var(--blue);
-  font-weight: 400;
-  font-size: clamp(40px, 8vw, 65px);
-  line-height: 1.52;
-  margin: 0 0 17px;
+  font-family:'Bad Script',cursive;
+  color:var(--blue);
+  font-weight:400;
+  font-size:clamp(40px,8vw,65px);
+  line-height:1.52;
+  margin:0 0 17px;
 }
 
-/* =========================
-   ПЕРВЫЙ ЭКРАН
-========================= */
+/* HERO */
 
 #hero {
-  height: 100svh;
-  min-height: 580px;
-  padding: 0;
-  isolation: isolate;
-  background: #f8a63b;
+  height:100svh;
+  min-height:580px;
+  padding:0;
+  isolation:isolate;
+  background:#f8a63b;
 }
 
-#hero > img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  object-position: center 43%;
-  animation: zoom 8s ease-out both;
+#hero>img {
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  object-position:center 43%;
+  animation:zoom 8s ease-out both;
 }
 
 #hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
     transparent 54%,
     rgba(51,29,13,.53)
   );
-  pointer-events: none;
+  pointer-events:none;
 }
 
 .hero-title {
-  position: absolute;
-  z-index: 2;
-  bottom: max(66px, env(safe-area-inset-bottom));
-  left: 12px;
-  right: 12px;
-  margin: 0;
-  text-align: center;
-  font: 400 clamp(51px,10vw,93px)/1.08
-    'Great Vibes', cursive;
-  color: white;
-  text-shadow: 0 4px 18px #532909a3;
-  animation: rise 1.1s both;
+  position:absolute;
+  z-index:2;
+  bottom:max(66px,env(safe-area-inset-bottom));
+  left:12px;
+  right:12px;
+  margin:0;
+  text-align:center;
+  font:400 clamp(51px,10vw,93px)/1.08
+       'Great Vibes',cursive;
+  color:white;
+  text-shadow:0 4px 18px #532909a3;
+  animation:rise 1.1s both;
 }
 
-/* =========================
-   МУЗЫКА
-========================= */
+/* MUSIC */
 
 #musicBtn {
-  position: fixed;
-  z-index: 20;
-  right: 18px;
-  top: 18px;
-  width: 50px;
-  height: 50px;
-  border: 0;
-  border-radius: 50%;
-  background: #fffffff0;
-  color: #7099b2;
-  box-shadow: 0 8px 28px #22334444;
-  cursor: pointer;
-  font-size: 21px;
+  position:fixed;
+  z-index:20;
+  right:18px;
+  top:18px;
+  width:50px;
+  height:50px;
+  border:0;
+  border-radius:50%;
+  background:#fffffff0;
+  color:#7099b2;
+  box-shadow:0 8px 28px #22334444;
+  cursor:pointer;
+  font-size:21px;
 }
 
 #audioError {
-  position: fixed;
-  right: 16px;
-  top: 78px;
-  z-index: 20;
-  max-width: 240px;
-  padding: 13px;
-  background: white;
-  box-shadow: 0 8px 28px #22334422;
-  border-radius: 12px;
-  font-size: 12px;
-  display: none;
+  position:fixed;
+  right:16px;
+  top:78px;
+  z-index:20;
+  max-width:240px;
+  padding:13px;
+  background:white;
+  border-radius:12px;
+  font-size:12px;
+  display:none;
 }
 
-/* =========================
-   ПРИГЛАШЕНИЕ
-========================= */
+/* INVITATION */
 
 #invitation {
   background:
@@ -155,215 +141,182 @@ button, input {
       transparent 40%
     ),
     #fffaf5;
+  padding-bottom:65px;
+}
 
-  padding-bottom: 65px;
+#invitation .inner {
+  width:min(100%,760px);
 }
 
 .invite-copy {
-  font: 500 clamp(23px,4.5vw,32px)/1.38
-    'Cormorant Garamond', Georgia, serif;
-  max-width: 610px;
-  margin: auto;
+  font:500 clamp(23px,4.5vw,32px)/1.38
+       'Cormorant Garamond',Georgia,serif;
+  max-width:610px;
+  margin:auto;
 }
 
 .invite-copy p {
-  margin: 0 0 15px;
+  margin:0 0 15px;
 }
 
 .sparkle {
-  color: var(--gold);
-  font-size: 22px;
-  margin: 12px 0 14px;
+  color:var(--gold);
+  font-size:22px;
+  margin:12px 0 14px;
 }
 
-/* =========================
-   КОЛЛАЖ ИЗ ТРЁХ ФОТО
-========================= */
-
-#invitation .inner {
-  width: min(100%, 760px);
-}
+/* THREE PHOTOS */
 
 .portrait-gallery {
-  display: grid;
-
-  grid-template-columns:
-    minmax(0,1.45fr)
-    minmax(0,1fr);
-
-  grid-template-rows:
-    repeat(2,minmax(0,1fr));
-
-  gap: 10px;
-
-  width: min(100%,690px);
-  aspect-ratio: 1.25;
-  margin: 26px auto 0;
-  padding: 7px;
-
-  background: white;
-  border-radius: 27px;
-
-  box-shadow: 0 18px 48px #59738625;
+  display:grid;
+  grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);
+  grid-template-rows:repeat(2,minmax(0,1fr));
+  gap:10px;
+  width:min(100%,690px);
+  aspect-ratio:1.25;
+  margin:26px auto 0;
+  padding:7px;
+  background:white;
+  border-radius:27px;
+  box-shadow:0 18px 48px #59738625;
 }
 
 .portrait-gallery img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  min-width: 0;
-  min-height: 0;
-  border-radius: 17px;
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  min-width:0;
+  min-height:0;
+  border-radius:17px;
 }
 
 .portrait-main {
-  grid-column: 1;
-  grid-row: 1 / 3;
-  object-position: center center;
+  grid-column:1;
+  grid-row:1/3;
+  object-position:center;
 }
 
 .portrait-top {
-  grid-column: 2;
-  grid-row: 1;
-  object-position: center 26%;
+  grid-column:2;
+  grid-row:1;
+  object-position:center 26%;
 }
 
 .portrait-bottom {
-  grid-column: 2;
-  grid-row: 2;
-  object-position: center 30%;
+  grid-column:2;
+  grid-row:2;
+  object-position:center 30%;
 }
 
-/* =========================
-   ДАТА И КАЛЕНДАРЬ
-========================= */
+/* DATE */
 
 #date {
-  background: linear-gradient(
-    #deedf7,
-    #f4f9fa,
-    #fffaf5
+  background:linear-gradient(
+    #deedf7,#f4f9fa,#fffaf5
   );
 }
 
 .day-x {
-  font: 400 clamp(51px,12vw,84px)/1.3
-    'Bad Script', cursive;
-  color: var(--blue);
-  margin: 0 0 18px;
+  font:400 clamp(51px,12vw,84px)/1.3
+       'Bad Script',cursive;
+  color:var(--blue);
+  margin:0 0 18px;
 }
 
 .date-line {
-  font: 500 clamp(22px,5vw,37px)/1.4
-    'Cormorant Garamond', serif;
-  margin: 0 0 28px;
-  white-space: nowrap;
+  font:500 clamp(22px,5vw,37px)/1.4
+       'Cormorant Garamond',serif;
+  margin:0 0 28px;
+  white-space:nowrap;
 }
 
 .date-line b {
-  color: #bb945e;
-  font-weight: 600;
+  color:#bb945e;
+  font-weight:600;
 }
 
 .calendar {
-  max-width: 350px;
-  margin: 0 auto 25px;
-  background: #ffffffd8;
-  border-radius: 28px;
-  box-shadow: 0 15px 40px #7898a522;
-  padding: 24px 18px;
+  max-width:350px;
+  margin:0 auto 25px;
+  background:#ffffffd8;
+  border-radius:28px;
+  padding:24px 18px;
+  box-shadow:0 15px 40px #7898a522;
 }
 
-.week,
-.dates {
-  display: grid;
-  grid-template-columns: repeat(7,1fr);
-  gap: 5px;
+.week,.dates {
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+  gap:5px;
 }
 
 .week {
-  font-size: 11px;
-  opacity: .68;
-  margin-bottom: 12px;
+  font-size:11px;
+  opacity:.68;
+  margin-bottom:12px;
 }
 
 .dates span {
-  aspect-ratio: 1;
-  display: grid;
-  place-items: center;
-  font-size: 12px;
+  aspect-ratio:1;
+  display:grid;
+  place-items:center;
+  font-size:12px;
 }
 
 .dates .today {
-  border-radius: 50%;
-  background: linear-gradient(
-    135deg,
-    #dfc58b,
-    #b98d4e
-  );
-  color: white;
+  border-radius:50%;
+  background:linear-gradient(135deg,#dfc58b,#b98d4e);
+  color:white;
 }
-
-/* =========================
-   ОБРАТНЫЙ ОТСЧЁТ
-========================= */
 
 .countdown {
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
-  max-width: 420px;
-  gap: 7px;
-  margin: auto;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  max-width:420px;
+  gap:7px;
+  margin:auto;
 }
 
-.countdown > div {
-  padding: 14px 4px;
-  background: #ffffffcc;
-  border-radius: 16px;
+.countdown>div {
+  padding:14px 4px;
+  background:#ffffffcc;
+  border-radius:16px;
 }
 
 .countdown strong {
-  font: 500 clamp(28px,7vw,42px)/1.15
-    'Cormorant Garamond', serif;
-  display: block;
+  font:500 clamp(28px,7vw,42px)/1.15
+       'Cormorant Garamond',serif;
+  display:block;
 }
 
-.countdown small {
-  font-size: 10px;
-}
+.countdown small {font-size:10px;}
 
-/* =========================
-   ПРОГРАММА ДНЯ С ТОРТОМ
-========================= */
+/* PROGRAM */
 
 #program {
-  color: white;
-  background: #593d2d;
-  isolation: isolate;
-  padding: 80px 19px;
+  color:white;
+  background:#593d2d;
+  isolation:isolate;
+  padding:80px 19px;
 }
 
 #program::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-
-  background:
-    url('./cake-background.png')
-    center center / cover no-repeat;
-
-  filter: brightness(.66) saturate(.85);
+  content:'';
+  position:absolute;
+  inset:0;
+  z-index:-2;
+  background:url('./cake-background.png')
+             center center/cover no-repeat;
+  filter:brightness(.66) saturate(.85);
 }
 
 #program::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-
-  background: linear-gradient(
+  content:'';
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:linear-gradient(
     90deg,
     rgba(31,18,14,.83),
     rgba(48,30,23,.62)
@@ -371,265 +324,226 @@ button, input {
 }
 
 .program-title {
-  font: 500 clamp(42px,9vw,65px)/1.2
-    'Cormorant Garamond', serif;
-  margin: 0 0 36px;
-  color: white;
+  font:500 clamp(42px,9vw,65px)/1.2
+       'Cormorant Garamond',serif;
+  margin:0 0 36px;
+  color:white;
 }
 
 .timeline {
-  width: min(100%,510px);
-  margin: auto;
-  text-align: left;
-  position: relative;
+  width:min(100%,510px);
+  margin:auto;
+  text-align:left;
+  position:relative;
 }
 
 .timeline::before {
-  content: '';
-  position: absolute;
-  left: 77px;
-  top: 7px;
-  bottom: 7px;
-  background: #ffffff77;
-  width: 1px;
+  content:'';
+  position:absolute;
+  left:77px;
+  top:7px;
+  bottom:7px;
+  background:#ffffff77;
+  width:1px;
 }
 
 .event {
-  display: grid;
-  grid-template-columns: 63px 1fr;
-  gap: 33px;
-  padding-bottom: 30px;
-  align-items: start;
+  display:grid;
+  grid-template-columns:63px 1fr;
+  gap:33px;
+  padding-bottom:30px;
+  align-items:start;
 }
 
-.event:last-child {
-  padding-bottom: 0;
-}
+.event:last-child {padding-bottom:0;}
 
 .when {
-  text-align: right;
-  font: 500 18px 'Cormorant Garamond', serif;
+  text-align:right;
+  font:500 18px 'Cormorant Garamond',serif;
 }
 
 .what {
-  position: relative;
-  font: 500 clamp(23px,5vw,31px)/1.25
-    'Cormorant Garamond', serif;
+  position:relative;
+  font:500 clamp(23px,5vw,31px)/1.25
+       'Cormorant Garamond',serif;
 }
 
 .what::before {
-  content: '';
-  position: absolute;
-  top: 8px;
-  left: -23px;
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: #dbbc8b;
-  box-shadow: 0 0 0 4px #ffffff33;
+  content:'';
+  position:absolute;
+  top:8px;
+  left:-23px;
+  width:9px;
+  height:9px;
+  border-radius:50%;
+  background:#dbbc8b;
+  box-shadow:0 0 0 4px #ffffff33;
 }
 
-/* =========================
-   РЕСТОРАН
-========================= */
+/* RESTAURANT */
 
 #place {
-  background: linear-gradient(
-    #e7f3fa,
-    #fffaf5
-  );
-
-  padding: 74px 20px 64px;
+  background:linear-gradient(#e7f3fa,#fffaf5);
+  padding:74px 20px 64px;
 }
 
 .restaurant {
-  font: 500 clamp(55px,12vw,78px)/1.1
-    'Cormorant Garamond', serif;
-  color: #749bb4;
-  margin: 5px 0 12px;
+  font:500 clamp(55px,12vw,78px)/1.1
+       'Cormorant Garamond',serif;
+  color:#749bb4;
+  margin:5px 0 12px;
 }
 
 .address {
-  font-size: 14px;
-  line-height: 1.85;
-  margin: 0 0 24px;
+  font-size:14px;
+  line-height:1.85;
+  margin:0 0 24px;
 }
 
 .map {
-  display: inline-block;
-  border-radius: 99px;
-  background: #85aec6;
-  color: white;
-  padding: 16px 28px;
-  text-decoration: none;
-  box-shadow: 0 10px 30px #6890a844;
+  display:inline-block;
+  border-radius:99px;
+  background:#85aec6;
+  color:white;
+  padding:16px 28px;
+  text-decoration:none;
+  box-shadow:0 10px 30px #6890a844;
 }
 
-/* =========================
-   АНКЕТА ГОСТЕЙ
-========================= */
+/* RSVP */
 
 #rsvp {
-  padding: 60px 20px 90px;
-  background: #fffaf5;
+  padding:60px 20px 90px;
+  background:#fffaf5;
 }
 
 .form {
-  background: white;
-  border-radius: 28px;
-  padding: 24px 20px;
-  max-width: 470px;
-  margin: 20px auto 0;
-  box-shadow: 0 13px 40px #8ca5b127;
+  background:white;
+  border-radius:28px;
+  padding:24px 20px;
+  max-width:470px;
+  margin:20px auto 0;
+  box-shadow:0 13px 40px #8ca5b127;
 }
 
 .form input {
-  width: 100%;
-  padding: 16px;
-  text-align: center;
-  border: 1px solid #dce5eb;
-  border-radius: 14px;
-  background: #f9f9f7;
-  outline: none;
+  width:100%;
+  padding:16px;
+  text-align:center;
+  border:1px solid #dce5eb;
+  border-radius:14px;
+  background:#f9f9f7;
+  outline:none;
 }
 
 .answer {
-  display: block;
-  width: 100%;
-  padding: 16px;
-  border: 0;
-  border-radius: 13px;
-  margin-top: 11px;
-  cursor: pointer;
+  display:block;
+  width:100%;
+  padding:16px;
+  border:0;
+  border-radius:13px;
+  margin-top:11px;
+  cursor:pointer;
 }
 
 .answer:disabled {
-  opacity: .65;
-  cursor: wait;
+  opacity:.65;
+  cursor:wait;
 }
 
 .yes {
-  background: #89b3cc;
-  color: white;
+  background:#89b3cc;
+  color:white;
 }
 
 .no {
-  background: #eee9e2;
-  color: #617b8f;
+  background:#eee9e2;
+  color:#617b8f;
 }
 
 #reply {
-  font-size: 13px;
-  line-height: 1.5;
-  margin-top: 15px;
-  min-height: 10px;
+  font-size:13px;
+  line-height:1.5;
+  margin-top:15px;
+  min-height:10px;
 }
 
-/* =========================
-   АНИМАЦИИ
-========================= */
+/* ANIMATIONS */
 
 .reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition:
-    opacity .9s ease,
-    transform .9s ease;
+  opacity:0;
+  transform:translateY(30px);
+  transition:opacity .9s ease,transform .9s ease;
 }
 
 .reveal.visible {
-  opacity: 1;
-  transform: none;
+  opacity:1;
+  transform:none;
 }
 
 @keyframes rise {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
+  from {opacity:0;transform:translateY(20px);}
+  to {opacity:1;transform:none;}
 }
 
 @keyframes zoom {
-  from { transform: scale(1.06); }
-  to { transform: scale(1); }
+  from {transform:scale(1.06);}
+  to {transform:scale(1);}
 }
 
-/* =========================
-   МОБИЛЬНАЯ ВЕРСИЯ
-========================= */
-
 @media(max-width:600px) {
-  #invitation {
-    padding-bottom: 35px;
-  }
+  #invitation {padding-bottom:35px;}
 
   .portrait-gallery {
-    gap: 5px;
-    padding: 5px;
-    aspect-ratio: 1.08;
-    border-radius: 19px;
+    gap:5px;
+    padding:5px;
+    aspect-ratio:1.08;
+    border-radius:19px;
   }
 
   .portrait-gallery img {
-    border-radius: 12px;
+    border-radius:12px;
   }
 }
 
 @media(max-width:450px) {
   section {
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left:16px;
+    padding-right:16px;
   }
 
-  #invitation {
-    padding-top: 62px;
-  }
+  #invitation {padding-top:62px;}
 
   .invite-copy {
-    font-size: clamp(22px,5.6vw,27px);
+    font-size:clamp(22px,5.6vw,27px);
   }
 
-  .invite-copy p {
-    margin-bottom: 12px;
-  }
+  .invite-copy p {margin-bottom:12px;}
 
-  .timeline::before {
-    left: 65px;
-  }
+  .timeline::before {left:65px;}
 
   .event {
-    grid-template-columns: 52px 1fr;
-    gap: 29px;
+    grid-template-columns:52px 1fr;
+    gap:29px;
   }
 
-  .what::before {
-    left: -18px;
-  }
-
-  .when {
-    font-size: 16px;
-  }
+  .what::before {left:-18px;}
+  .when {font-size:16px;}
 
   .date-line {
-    font-size: clamp(20px,5vw,25px);
+    font-size:clamp(20px,5vw,25px);
   }
 }
 
 @media(prefers-reduced-motion:reduce) {
-  *,
-  *::before,
-  *::after {
-    animation: none !important;
-    transition: none !important;
+  *,*::before,*::after {
+    animation:none!important;
+    transition:none!important;
   }
 
   .reveal {
-    opacity: 1;
-    transform: none;
+    opacity:1;
+    transform:none;
   }
 }
 </style>
@@ -637,19 +551,9 @@ button, input {
 
 <body>
 
-<!-- МУЗЫКА -->
+<audio id="music" src="./music.mp3" loop preload="none"></audio>
 
-<audio
-  id="music"
-  src="./music.mp3"
-  loop
-  preload="none">
-</audio>
-
-<button
-  id="musicBtn"
-  aria-label="Музыканы қосу"
-  type="button">
+<button id="musicBtn" type="button" aria-label="Музыка">
   🔇
 </button>
 
@@ -657,37 +561,17 @@ button, input {
 
 <main>
 
-<!-- =========================
-     1. ГЛАВНЫЙ ЭКРАН
-========================= -->
-
 <section id="hero">
-
-  <img
-    src="./birthday-tair.png"
-    alt="Таир туған күн тортымен"
-  >
-
-  <h1 class="hero-title">
-    Happy Tair's Birthday
-  </h1>
-
+  <img src="./birthday-tair.png" alt="Таир туған күн тортымен">
+  <h1 class="hero-title">Happy Tair's Birthday</h1>
 </section>
 
-<!-- =========================
-     2. ПРИГЛАШЕНИЕ И ТРИ ФОТО
-========================= -->
-
 <section id="invitation">
-
   <div class="inner reveal">
 
-    <h2 class="title">
-      Құрметті қонақтар!
-    </h2>
+    <h2 class="title">Құрметті қонақтар!</h2>
 
     <div class="invite-copy">
-
       <p>
         Сіздерді ұлымыз Таирдың жеке
         мерекесіне арналған қуанышты
@@ -708,17 +592,12 @@ button, input {
         ортамыздан табылсаңыз,
         біз үшін үлкен қуаныш болмақ!
       </p>
-
     </div>
 
     <div class="sparkle">✦</div>
 
-    <div
-      class="portrait-gallery"
-      aria-label="Таирдің фотосессиясы"
-    >
+    <div class="portrait-gallery">
 
-      <!-- Большая фотография слева -->
       <img
         class="portrait-main"
         src="./tair-full.png"
@@ -726,7 +605,6 @@ button, input {
         loading="lazy"
       >
 
-      <!-- Верхняя фотография справа -->
       <img
         class="portrait-top"
         src="./tair-bow.png"
@@ -734,7 +612,6 @@ button, input {
         loading="lazy"
       >
 
-      <!-- Нижняя фотография справа -->
       <img
         class="portrait-bottom"
         src="./tair-laying.png"
@@ -743,29 +620,19 @@ button, input {
       >
 
     </div>
-
   </div>
-
 </section>
 
-<!-- =========================
-     3. ДЕНЬ X
-========================= -->
-
 <section id="date">
-
   <div class="inner reveal">
 
-    <h2 class="day-x">
-      День X...
-    </h2>
+    <h2 class="day-x">День X...</h2>
 
     <p class="date-line">
       <b>28</b> қараша 2026 · <b>16:00</b>
     </p>
 
     <div class="calendar">
-
       <div class="week">
         <span>Дс</span>
         <span>Сс</span>
@@ -777,43 +644,31 @@ button, input {
       </div>
 
       <div class="dates" id="calendarDays"></div>
-
     </div>
 
     <div class="countdown">
-
       <div>
         <strong id="days">00</strong>
         <small>КҮН</small>
       </div>
-
       <div>
         <strong id="hours">00</strong>
         <small>САҒАТ</small>
       </div>
-
       <div>
         <strong id="minutes">00</strong>
         <small>МИНУТ</small>
       </div>
-
       <div>
         <strong id="seconds">00</strong>
         <small>СЕКУНД</small>
       </div>
-
     </div>
 
   </div>
-
 </section>
 
-<!-- =========================
-     4. ПРОГРАММА ДНЯ
-========================= -->
-
 <section id="program">
-
   <div class="inner reveal">
 
     <h2 class="program-title">
@@ -824,30 +679,22 @@ button, input {
 
       <div class="event">
         <span class="when">15:30</span>
-        <span class="what">
-          Қонақтарды қарсы алу
-        </span>
+        <span class="what">Қонақтарды қарсы алу</span>
       </div>
 
       <div class="event">
         <span class="when">16:00</span>
-        <span class="what">
-          Дастарханға жайғасу
-        </span>
+        <span class="what">Дастарханға жайғасу</span>
       </div>
 
       <div class="event">
         <span class="when">17:00</span>
-        <span class="what">
-          Торт кесу рәсімі 🎂
-        </span>
+        <span class="what">Торт кесу рәсімі 🎂</span>
       </div>
 
       <div class="event">
         <span class="when">17:40</span>
-        <span class="what">
-          Би, қызықты кеш ✨
-        </span>
+        <span class="what">Би, қызықты кеш ✨</span>
       </div>
 
       <div class="event">
@@ -859,54 +706,34 @@ button, input {
       </div>
 
     </div>
-
   </div>
-
 </section>
 
-<!-- =========================
-     5. РЕСТОРАН
-========================= -->
-
 <section id="place">
-
   <div class="inner reveal">
 
-    <h2 class="title">
-      Той өтетін мекенжай
-    </h2>
+    <h2 class="title">Той өтетін мекенжай</h2>
 
-    <div class="restaurant">
-      «Ырысты»
-    </div>
+    <div class="restaurant">«Ырысты»</div>
 
     <p class="address">
-      Мейрамханасы
-      <br>
-      Астана қаласы
-      <br>
+      Мейрамханасы<br>
+      Астана қаласы<br>
       Пушкин көшесі, 27/2
     </p>
 
     <a
       class="map"
-      target="_blank"
-      rel="noopener noreferrer"
       href="https://2gis.kz/astana/search/%D0%AB%D1%80%D1%8B%D1%81%D1%82%D1%8B%20%D0%9F%D1%83%D1%88%D0%BA%D0%B8%D0%BD%D0%B0%2027%2F2"
-    >
+      target="_blank"
+      rel="noopener noreferrer">
       📍 2ГИС арқылы ашу
     </a>
 
   </div>
-
 </section>
 
-<!-- =========================
-     6. АНКЕТА ГОСТЕЙ
-========================= -->
-
 <section id="rsvp">
-
   <div class="inner reveal">
 
     <h2 class="title">
@@ -926,29 +753,21 @@ button, input {
       <button
         class="answer yes"
         type="button"
-        data-answer="Қуана келемін"
-      >
+        data-answer="Қуана келемін">
         Қуана келемін! ❤️
       </button>
 
       <button
         class="answer no"
         type="button"
-        data-answer="Келе алмаймын"
-      >
+        data-answer="Келе алмаймын">
         Өкінішке қарай, келе алмаймын
       </button>
 
-      <div
-        id="reply"
-        role="status"
-        aria-live="polite">
-      </div>
-
+      <div id="reply" role="status" aria-live="polite"></div>
     </div>
 
   </div>
-
 </section>
 
 </main>
@@ -956,18 +775,12 @@ button, input {
 <script>
 'use strict';
 
-// =====================================
-// НАСТРОЙКИ GOOGLE SHEETS
-// =====================================
+/* GOOGLE SHEETS */
 
-// Вставь сюда URL опубликованного
-// Google Apps Script, заканчивающийся /exec.
+const GOOGLE_SCRIPT_URL =
+  'https://script.google.com/macros/s/AKfycbwALvKMwY-ivO7axi44Zjop8AeEpaNHjyepTjcc--E7r2OvDx1vITxmbwfXcSMSz59m7Q/exec';
 
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwALvKMwY-ivO7axi44Zjop8AeEpaNHjyepTjcc--E7r2OvDx1vITxmbwfXcSMSz59m7Q/exec';
-
-// =====================================
-// МУЗЫКА
-// =====================================
+/* MUSIC */
 
 const audio = document.getElementById('music');
 const musicBtn = document.getElementById('musicBtn');
@@ -985,7 +798,6 @@ audio.addEventListener('pause', () => {
 });
 
 musicBtn.addEventListener('click', async () => {
-
   if (!audio.paused) {
     audio.pause();
     return;
@@ -996,66 +808,43 @@ musicBtn.addEventListener('click', async () => {
   } catch (error) {
     audioError.textContent =
       'Музыка не загрузилась. Проверь music.mp3.';
-
     audioError.style.display = 'block';
   }
-
 });
 
-// =====================================
-// ПЛАВНОЕ ПОЯВЛЕНИЕ БЛОКОВ
-// =====================================
+/* SCROLL ANIMATIONS */
 
 const revealElements =
   document.querySelectorAll('.reveal');
 
 if ('IntersectionObserver' in window) {
-
-  const observer = new IntersectionObserver(
-    entries => {
-
-      entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-
-      });
-
-    },
-    {threshold: 0.08}
-  );
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.08});
 
   revealElements.forEach(element => {
     observer.observe(element);
   });
-
 } else {
-
   revealElements.forEach(element => {
     element.classList.add('visible');
   });
-
 }
 
-// =====================================
-// КАЛЕНДАРЬ НОЯБРЯ 2026
-// =====================================
+/* CALENDAR */
 
-const calendar =
-  document.getElementById('calendarDays');
+const calendar = document.getElementById('calendarDays');
 
-// 1 ноября 2026 — воскресенье.
-
-for (let i = 0; i < 6; i++) {
-  calendar.appendChild(
-    document.createElement('span')
-  );
+for (let i=0; i<6; i++) {
+  calendar.appendChild(document.createElement('span'));
 }
 
-for (let day = 1; day <= 30; day++) {
-
+for (let day=1; day<=30; day++) {
   const cell = document.createElement('span');
   cell.textContent = day;
 
@@ -1064,53 +853,42 @@ for (let day = 1; day <= 30; day++) {
   }
 
   calendar.appendChild(cell);
-
 }
 
-// =====================================
-// ОБРАТНЫЙ ОТСЧЁТ
-// =====================================
+/* COUNTDOWN */
 
 const EVENT =
   new Date('2026-11-28T16:00:00+05:00').getTime();
 
 function updateCountdown() {
-
-  const diff = Math.max(
-    0,
-    EVENT - Date.now()
-  );
+  const diff = Math.max(0, EVENT - Date.now());
 
   const values = {
-    days: Math.floor(diff / 86400000),
-    hours: Math.floor(diff / 3600000) % 24,
-    minutes: Math.floor(diff / 60000) % 60,
-    seconds: Math.floor(diff / 1000) % 60
+    days: Math.floor(diff/86400000),
+    hours: Math.floor(diff/3600000)%24,
+    minutes: Math.floor(diff/60000)%60,
+    seconds: Math.floor(diff/1000)%60
   };
 
-  Object.entries(values).forEach(([key, value]) => {
-
+  Object.entries(values).forEach(([key,value]) => {
     document.getElementById(key).textContent =
-      String(value).padStart(2, '0');
-
+      String(value).padStart(2,'0');
   });
-
 }
 
 updateCountdown();
-setInterval(updateCountdown, 1000);
+setInterval(updateCountdown,1000);
 
-// =====================================
-// ОТПРАВКА ОТВЕТОВ В GOOGLE SHEETS
-// =====================================
+/* GOOGLE SHEETS RSVP */
 
 const nameInput = document.getElementById('guestName');
 const reply = document.getElementById('reply');
+const answerButtons =
+  Array.from(document.querySelectorAll('[data-answer]'));
 
 let pending = false;
 
 function saveRsvp(answer) {
-
   const name = nameInput.value.trim();
 
   if (!name) {
@@ -1119,13 +897,9 @@ function saveRsvp(answer) {
     return;
   }
 
-  if (
-    !GOOGLE_SCRIPT_URL ||
-    !GOOGLE_SCRIPT_URL.includes('/exec')
-  ) {
+  if (!GOOGLE_SCRIPT_URL.endsWith('/exec')) {
     reply.textContent =
-      'Жауапты жіберу әлі қосылмаған. ' +
-      'Google Apps Script /exec сілтемесін орнатыңыз.';
+      'Google Apps Script сілтемесін тексеріңіз.';
     return;
   }
 
@@ -1134,114 +908,82 @@ function saveRsvp(answer) {
   pending = true;
   reply.textContent = 'Жіберілуде...';
 
-  const buttons = [
-    ...document.querySelectorAll('[data-answer]')
-  ];
+  answerButtons.forEach(btn => btn.disabled = true);
 
-  buttons.forEach(button => {
-    button.disabled = true;
-  });
-
-  const key = 'tairRsvp_' +
-    Date.now() + '_' +
-    Math.random().toString(36).slice(2, 8);
+  // Callback contains only digits.
+  // Compatible with Apps Script validation.
+  const key =
+    'tairRsvp_' +
+    String(Date.now()) +
+    String(Math.floor(Math.random()*1000000)).padStart(6,'0');
 
   const script = document.createElement('script');
 
-  let completed = false;
+  let finished = false;
   let timer;
 
-  const cleanup = () => {
-
+  function cleanup() {
     clearTimeout(timer);
-
     delete window[key];
     script.remove();
-
     pending = false;
+    answerButtons.forEach(btn => btn.disabled = false);
+  }
 
-    buttons.forEach(button => {
-      button.disabled = false;
-    });
+  window[key] = function(result) {
+    if (finished) return;
 
-  };
-
-  window[key] = function(data) {
-
-    if (completed) return;
-
-    completed = true;
+    finished = true;
     cleanup();
 
-    if (data && data.ok === true) {
-
+    if (result && result.ok === true) {
       reply.textContent =
         'Жауабыңыз үшін рақмет! ❤️';
-
     } else {
-
       reply.textContent =
         'Жауап сақталмады. Қайталап көріңіз.';
-
     }
-
   };
 
   timer = setTimeout(() => {
+    if (finished) return;
 
-    if (completed) return;
-
-    completed = true;
+    finished = true;
     cleanup();
 
     reply.textContent =
       'Серверден жауап келмеді. ' +
-      'Жауаптың сақталғанын Google Sheets арқылы тексеріңіз.';
+      'Google Sheets арқылы тексеріңіз.';
+  }, 15000);
 
-  }, 12000);
+  script.onerror = function() {
+    if (finished) return;
 
-  script.onerror = () => {
-
-    if (completed) return;
-
-    completed = true;
+    finished = true;
     cleanup();
 
     reply.textContent =
-      'Қосылу қатесі. /exec сілтемесін тексеріңіз.';
-
+      'Қосылу қатесі. Google Apps Script жарияланымын тексеріңіз.';
   };
 
   const url = new URL(GOOGLE_SCRIPT_URL);
 
-  url.searchParams.set('action', 'rsvp');
-  url.searchParams.set('name', name);
-  url.searchParams.set('answer', answer);
-  url.searchParams.set('callback', key);
-  url.searchParams.set('requestId', key);
+  url.searchParams.set('action','rsvp');
+  url.searchParams.set('name',name);
+  url.searchParams.set('answer',answer);
+  url.searchParams.set('callback',key);
+  url.searchParams.set('requestId',key);
 
   script.src = url.toString();
 
   document.body.appendChild(script);
-
 }
 
-// =====================================
-// КНОПКИ ОТВЕТА
-// =====================================
-
-document.querySelectorAll('[data-answer]')
-  .forEach(button => {
-
-    button.addEventListener('click', () => {
-
-      saveRsvp(button.dataset.answer);
-
-    });
-
+answerButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    saveRsvp(btn.dataset.answer);
   });
-
+});
 </script>
-
 </body>
 </html>
