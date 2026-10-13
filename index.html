@@ -546,6 +546,46 @@ button,input { font:inherit; }
     transform:none;
   }
 }
+  .form.submitted {
+  padding: 45px 22px;
+  text-align: center;
+  animation: successAppear .8s ease both;
+}
+
+.success-heart {
+  font-size: 58px;
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+.success-animation h3 {
+  font-family: 'Bad Script', cursive;
+  font-weight: 400;
+  color: #85b3cb;
+  font-size: clamp(30px, 7vw, 45px);
+  line-height: 1.5;
+  margin: 18px 0 8px;
+}
+
+.success-animation p {
+  color: #7b92a4;
+  font-size: 14px;
+}
+
+@keyframes successAppear {
+  from {
+    opacity: 0;
+    transform: translateY(25px) scale(.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.13); }
+}
 </style>
 </head>
 
@@ -930,20 +970,35 @@ function saveRsvp(answer) {
     answerButtons.forEach(btn => btn.disabled = false);
   }
 
-  window[key] = function(result) {
-    if (finished) return;
+  
+window[key] = function(result) {
+  if (finished) return;
 
-    finished = true;
-    cleanup();
+  finished = true;
+  cleanup();
 
-    if (result && result.ok === true) {
-      reply.textContent =
-        'Жауабыңыз үшін рақмет! ❤️';
-    } else {
-      reply.textContent =
-        'Жауап сақталмады. Қайталап көріңіз.';
-    }
-  };
+  if (result && result.ok === true && result.row > 0) {
+
+    const form = document.querySelector('#rsvp .form');
+
+    form.innerHTML = `
+      <div class="success-animation">
+        <div class="success-heart">❤️</div>
+        <h3>Жауабыңыз үшін рақмет!</h3>
+        <p>Жауабыңыз сәтті қабылданды.</p>
+      </div>
+    `;
+
+    form.classList.add('submitted');
+
+  } else {
+
+    reply.textContent =
+      'Жауап сақталмады. Қайталап көріңіз.';
+
+  }
+};
+
 
   timer = setTimeout(() => {
     if (finished) return;
