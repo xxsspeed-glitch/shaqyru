@@ -3,707 +3,510 @@
 <html lang="kk">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#fffaf4">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#fffaf5">
 <title>Happy Tair's Birthday — Таир 1 жас</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Great+Vibes&family=Marck+Script&family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Great+Vibes&family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --cream: #fffaf4;
-  --blue: #88b2cb;
-  --ink: #627d98;
-  --gold: #c9a066;
+  --cream:#fffaf5;
+  --blue:#8cb4cb;
+  --ink:#627c94;
+  --gold:#d1a46b;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing:border-box; }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior:smooth; }
 
 body {
-  margin: 0;
-  background: var(--cream);
-  color: var(--ink);
-  font-family: Manrope, Arial, sans-serif;
-  overflow-x: hidden;
-}
-
-button, input {
-  font: inherit;
-}
-
-button {
-  cursor: pointer;
+  margin:0;
+  color:var(--ink);
+  font-family:Manrope,Arial,sans-serif;
+  background:var(--cream);
+  overflow-x:hidden;
 }
 
 section {
-  position: relative;
-  padding: 76px 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+  position:relative;
+  padding:76px 20px;
+  overflow:hidden;
 }
 
 .inner {
-  position: relative;
-  z-index: 1;
-  width: min(100%, 650px);
-  text-align: center;
+  width:min(100%,660px);
+  margin:auto;
+  text-align:center;
+  position:relative;
+  z-index:2;
 }
 
-.script {
-  font-family: 'Bad Script', 'Marck Script', cursive;
-  font-size: clamp(37px, 8vw, 64px);
-  line-height: 1.55;
-  font-weight: 400;
-  color: var(--blue);
-  margin: 0 0 24px;
+button,input {font:inherit}
+
+.title {
+  font-family:'Bad Script',cursive;
+  color:var(--blue);
+  font-weight:400;
+  font-size:clamp(40px,8vw,65px);
+  line-height:1.52;
+  margin:0 0 17px;
 }
 
-.gold {
-  color: var(--gold);
-}
-
-/* =========================
-   ПЕРВЫЙ ЭКРАН
-========================= */
+/* ПЕРВЫЙ ЭКРАН */
 
 #hero {
-  display: block;
-  padding: 0;
-  height: 100svh;
-  min-height: 610px;
-  max-height: 1050px;
-  background: #f7b14f;
-  isolation: isolate;
+  height:100svh;
+  min-height:580px;
+  padding:0;
+  isolation:isolate;
+  background:#f8a63b;
 }
 
-.hero-photo {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  object-position: center 40%;
-  animation: zoom 8s ease-out both;
+#hero>img {
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  object-position:center 43%;
+  animation:zoom 8s ease-out both;
 }
 
-.hero-shadow {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    transparent 44%,
-    rgba(54,26,10,.04) 58%,
-    rgba(48,27,16,.52) 100%
+#hero::after {
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    transparent 54%,
+    rgba(51,29,13,.53)
   );
-}
-
-.hero-content {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  flex-direction: column;
-  padding:
-    0 18px
-    max(64px, env(safe-area-inset-bottom));
-  text-align: center;
+  pointer-events:none;
 }
 
 .hero-title {
-  max-width: 780px;
-  margin: 0;
-  font-family: 'Great Vibes', 'Marck Script', cursive;
-  font-size: clamp(50px, 10vw, 94px);
-  font-weight: 400;
-  line-height: 1.05;
-  color: #fff;
-  text-shadow: 0 4px 20px #4d260d9c;
-  animation: rise 1.3s both;
+  position:absolute;
+  z-index:2;
+  bottom:max(66px,env(safe-area-inset-bottom));
+  left:12px;
+  right:12px;
+  margin:0;
+  text-align:center;
+  font:400 clamp(51px,10vw,93px)/1.08 'Great Vibes',cursive;
+  color:white;
+  text-shadow:0 4px 18px #532909a3;
+  animation:rise 1.1s both;
 }
 
-/* =========================
-   МУЗЫКА
-========================= */
+/* МУЗЫКА */
 
 #musicBtn {
-  position: fixed;
-  z-index: 10;
-  right: 18px;
-  top: 18px;
-  width: 50px;
-  height: 50px;
-  border: 0;
-  border-radius: 50%;
-  background: #ffffffeb;
-  color: #709db7;
-  box-shadow: 0 7px 27px #33445522;
-  font-size: 20px;
+  position:fixed;
+  z-index:20;
+  right:18px;
+  top:18px;
+  width:50px;
+  height:50px;
+  border:0;
+  border-radius:50%;
+  background:#fffffff0;
+  color:#7099b2;
+  box-shadow:0 8px 28px #22334444;
+  cursor:pointer;
+  font-size:21px;
 }
 
-#musicNotice {
-  display: none;
-  position: fixed;
-  z-index: 11;
-  right: 15px;
-  top: 76px;
-  background: #fff;
-  padding: 11px 14px;
-  border-radius: 12px;
-  font-size: 12px;
-  max-width: 220px;
-  box-shadow: 0 8px 25px #0002;
+#audioError {
+  position:fixed;
+  right:16px;
+  top:78px;
+  z-index:20;
+  max-width:240px;
+  padding:13px;
+  background:white;
+  box-shadow:0 8px 28px #22334422;
+  border-radius:12px;
+  font-size:12px;
+  display:none;
 }
 
-/* =========================
-   ПРИГЛАШЕНИЕ
-========================= */
+/* ПРИГЛАШЕНИЕ */
 
 #invitation {
-  background:
-    radial-gradient(
-      circle at 7% 5%,
-      #e6f1f7,
-      transparent 38%
-    ),
-    #fffaf4;
-
-  padding: 76px 18px 0;
+  background:radial-gradient(
+    circle at 8% 9%,
+    #e7f1f7,
+    transparent 40%
+  ),#fffaf5;
+  padding-bottom:0;
 }
 
-.invite-text {
-  max-width: 640px;
-  margin: 0 auto;
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(21px, 4vw, 31px);
-  font-weight: 500;
-  line-height: 1.43;
-  color: #657f99;
+.invite-copy {
+  font:500 clamp(23px,4.5vw,32px)/1.38
+    'Cormorant Garamond',Georgia,serif;
+  max-width:610px;
+  margin:auto;
 }
 
-.invite-text p {
-  margin: 0 0 17px;
-}
+.invite-copy p {margin:0 0 15px}
 
-.invite-text p:last-child {
-  margin-bottom: 10px;
+.sparkle {
+  color:var(--gold);
+  font-size:22px;
+  margin:12px 0 14px;
 }
 
 .invite-photo {
-  display: block;
-  width: min(100%, 430px);
-  height: auto;
-  object-fit: contain;
-  margin: 8px auto 0;
-  border-radius: 24px 24px 0 0;
+  width:min(100%,445px);
+  height:auto;
+  display:block;
+  margin:0 auto;
+  object-fit:contain;
   box-shadow:
-    0 0 0 5px #fff,
-    0 20px 48px #5e758525;
+    0 0 0 5px white,
+    0 14px 35px #59738626;
+  border-radius:28px 28px 0 0;
 }
 
-/* =========================
-   ДЕНЬ X
-========================= */
+#photoError {
+  font-size:13px;
+  display:none;
+  color:#a14a44;
+}
+
+/* ДАТА */
 
 #date {
-  background: linear-gradient(
-    #e0eff8,
-    #f5f9fa,
-    #fffaf4
+  background:linear-gradient(
+    #deedf7,#f4f9fa,#fffaf5
   );
 }
 
 .day-x {
-  font-family:
-    'Harmony',
-    'Marck Script',
-    'Bad Script',
-    cursive;
-
-  font-weight: 400;
-  color: var(--blue);
-  font-size: clamp(51px, 12vw, 83px);
-  margin: 0 0 22px;
-  line-height: 1.25;
+  font:400 clamp(51px,12vw,84px)/1.3
+    'Bad Script',cursive;
+  color:var(--blue);
+  margin:0 0 18px;
 }
 
 .date-line {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-weight: 500;
-  font-size: clamp(22px, 5.8vw, 38px);
-  line-height: 1.5;
-  color: #6f93ae;
-  white-space: nowrap;
-  margin: 0 auto 22px;
+  font:500 clamp(22px,5vw,37px)/1.4
+    'Cormorant Garamond',serif;
+  margin:0 0 28px;
+  white-space:nowrap;
 }
 
-.date-line strong {
-  font-weight: 600;
-  color: #b98d4d;
+.date-line b {
+  color:#bb945e;
+  font-weight:600;
 }
-
-/* КАЛЕНДАРЬ */
 
 .calendar {
-  max-width: 360px;
-  margin: 24px auto 29px;
-  padding: 25px 19px;
-  background: #ffffffcc;
-  border-radius: 24px;
-  box-shadow: 0 15px 40px #6689a021;
+  max-width:350px;
+  margin:0 auto 25px;
+  background:#ffffffd8;
+  border-radius:28px;
+  box-shadow:0 15px 40px #7898a522;
+  padding:24px 18px;
 }
 
-.week,
-.dates {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 5px;
+.week,.dates {
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+  gap:5px;
 }
 
 .week {
-  font-size: 11px;
-  opacity: .65;
-  margin-bottom: 12px;
+  font-size:11px;
+  opacity:.68;
+  margin-bottom:12px;
 }
 
 .dates span {
-  aspect-ratio: 1;
-  display: grid;
-  place-items: center;
-  font-size: 12px;
+  aspect-ratio:1;
+  display:grid;
+  place-items:center;
+  font-size:12px;
 }
 
-.dates .special {
-  color: white;
-  border-radius: 50%;
-  background: linear-gradient(
-    135deg,
-    #e3c58d,
-    #ba9256
-  );
+.dates .today {
+  border-radius:50%;
+  background:linear-gradient(135deg,#dfc58b,#b98d4e);
+  color:white;
 }
 
 /* ТАЙМЕР */
 
 .countdown {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0,1fr));
-  gap: 8px;
-  max-width: 420px;
-  margin: 20px auto 0;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  max-width:420px;
+  gap:7px;
+  margin:auto;
 }
 
-.countdown div {
-  background: #ffffffc7;
-  border-radius: 15px;
-  padding: 13px 4px;
+.countdown>div {
+  padding:14px 4px;
+  background:#ffffffcc;
+  border-radius:16px;
 }
 
 .countdown strong {
-  display: block;
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(29px, 7vw, 42px);
-  font-weight: 500;
-  line-height: 1;
+  font:500 clamp(28px,7vw,42px)/1.15
+    'Cormorant Garamond',serif;
+  display:block;
 }
 
-.countdown small {
-  font-size: 9px;
-  letter-spacing: 1px;
-}
+.countdown small {font-size:10px}
 
-/* =========================
-   ПРОГРАММА ДНЯ
-========================= */
+/* ПРОГРАММА ДНЯ */
 
 #program {
-  color: #fff;
-  background: #714229;
-  padding: 85px 18px;
-  isolation: isolate;
+  color:#fff;
+  background:#593d2d;
+  isolation:isolate;
+  padding:80px 19px;
 }
 
 #program::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-
-  background:
-    url('./birthday-tair.png')
-    center 66% / cover no-repeat;
-
-  filter: brightness(.45) saturate(.82);
-  transform: scale(1.03);
-  z-index: -2;
+  content:'';
+  position:absolute;
+  inset:0;
+  z-index:-2;
+  background:url('./cake-background.png')
+    center center/cover no-repeat;
+  filter:brightness(.5);
 }
 
 #program::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    #2c1c1699,
-    #382219a8
+  content:'';
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:linear-gradient(
+    90deg,
+    #23150eb0,
+    #28191280
   );
-  z-index: -1;
 }
 
 .program-title {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(47px, 10vw, 69px);
-  font-weight: 500;
-  line-height: 1.3;
-  margin: 0 0 30px;
-  color: #fff;
+  font:500 clamp(42px,9vw,65px)/1.2
+    'Cormorant Garamond',serif;
+  margin:0 0 36px;
+  color:white;
 }
 
 .timeline {
-  max-width: 580px;
-  margin: auto;
-  position: relative;
-  text-align: left;
+  width:min(100%,510px);
+  margin:auto;
+  text-align:left;
+  position:relative;
 }
 
-.timeline::before {
-  content: '';
-  position: absolute;
-  top: 7px;
-  bottom: 7px;
-  left: 78px;
-  width: 1px;
-  background: #fff8;
+.timeline:before {
+  content:'';
+  position:absolute;
+  left:77px;
+  top:7px;
+  bottom:7px;
+  background:#ffffff77;
+  width:1px;
 }
 
 .event {
-  display: grid;
-  grid-template-columns: 65px 1fr;
-  gap: 34px;
-  padding: 0 0 31px;
-  align-items: start;
+  display:grid;
+  grid-template-columns:63px 1fr;
+  gap:33px;
+  padding-bottom:30px;
+  align-items:start;
 }
 
-.event:last-child {
-  padding-bottom: 0;
+.event:last-child {padding-bottom:0}
+
+.when {
+  text-align:right;
+  font:500 18px 'Cormorant Garamond',serif;
 }
 
-.event-time {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 17px;
-  font-weight: 500;
-  text-align: right;
-  letter-spacing: .5px;
-  color: #fff;
+.what {
+  position:relative;
+  font:500 clamp(23px,5vw,31px)/1.25
+    'Cormorant Garamond',serif;
 }
 
-.event-body {
-  position: relative;
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(23px, 5vw, 31px);
-  font-weight: 500;
-  line-height: 1.24;
+.what:before {
+  content:'';
+  position:absolute;
+  top:8px;
+  left:-23px;
+  width:9px;
+  height:9px;
+  border-radius:50%;
+  background:#dbbc8b;
+  box-shadow:0 0 0 4px #ffffff33;
 }
 
-.event-body::before {
-  content: '';
-  position: absolute;
-  left: -25px;
-  top: 9px;
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: #dfbc84;
-  box-shadow: 0 0 0 4px #fff2;
-}
-
-/* =========================
-   ФОТОГАЛЕРЕЯ
-========================= */
-
-#gallery {
-  background: #fffaf4;
-}
-
-.gallery-title {
-  font-family: 'Bad Script', 'Marck Script', cursive;
-  font-size: clamp(40px, 8vw, 60px);
-  font-weight: 400;
-  color: var(--blue);
-  margin: 0 0 15px;
-}
-
-.photos {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0,1fr));
-  gap: 10px;
-  margin-top: 26px;
-}
-
-.photos img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 16px;
-  box-shadow: 0 10px 23px #6a7e8f1a;
-}
-
-.photos img:first-child {
-  grid-row: span 2;
-  height: 450px;
-}
-
-.photos img:nth-child(4),
-.photos img:nth-child(5) {
-  grid-column: span 2;
-  height: 280px;
-}
-
-/* =========================
-   РЕСТОРАН
-========================= */
+/* РЕСТОРАН */
 
 #place {
-  background: linear-gradient(
-    #e8f4fa,
-    #fffaf4
-  );
-  padding: 65px 18px 80px;
-}
-
-#place .inner {
-  max-width: 560px;
-}
-
-.place-title {
-  font-family: 'Bad Script', 'Marck Script', cursive;
-  font-size: clamp(44px, 10vw, 66px);
-  font-weight: 400;
-  line-height: 1.5;
-  color: var(--blue);
-  margin: 0 0 8px;
+  background:linear-gradient(#e7f3fa,#fffaf5);
+  padding:74px 20px 64px;
 }
 
 .restaurant {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(54px, 12vw, 84px);
-  font-weight: 500;
-  line-height: 1;
-  margin: 0 0 12px;
-  color: #7096b3;
+  font:500 clamp(55px,12vw,78px)/1.1
+    'Cormorant Garamond',serif;
+  color:#749bb4;
+  margin:5px 0 12px;
 }
 
 .address {
-  font-size: 14px;
-  line-height: 1.9;
-  margin: 0 0 24px;
+  font-size:14px;
+  line-height:1.85;
+  margin:0 0 24px;
 }
 
-.map-link {
-  display: inline-block;
-  background: #81abc4;
-  color: white;
-  text-decoration: none;
-  border-radius: 999px;
-  padding: 15px 29px;
-  box-shadow: 0 10px 30px #6d91a944;
+.map {
+  display:inline-block;
+  border-radius:99px;
+  background:#85aec6;
+  color:white;
+  padding:16px 28px;
+  text-decoration:none;
+  box-shadow:0 10px 30px #6890a844;
 }
 
-/* =========================
-   ПОДТВЕРЖДЕНИЕ
-========================= */
+/* ОПРОС */
 
 #rsvp {
-  background: #fffaf4;
-  padding: 75px 18px 95px;
-}
-
-.rsvp-desc {
-  font-size: 14px;
-  line-height: 1.8;
-  max-width: 470px;
-  margin: 0 auto;
+  padding:60px 20px 90px;
+  background:#fffaf5;
 }
 
 .form {
-  background: #ffffffc9;
-  box-shadow: 0 15px 50px #8098ad23;
-  border-radius: 28px;
-  padding: 24px 20px;
-  max-width: 470px;
-  margin: 24px auto 0;
+  background:white;
+  border-radius:28px;
+  padding:24px 20px;
+  max-width:470px;
+  margin:20px auto 0;
+  box-shadow:0 13px 40px #8ca5b127;
 }
 
 .form input {
-  display: block;
-  width: 100%;
-  border: 1px solid #e1e8ed;
-  background: #f8f8f7;
-  border-radius: 14px;
-  padding: 15px;
-  text-align: center;
-  outline: none;
-  margin-bottom: 8px;
+  width:100%;
+  padding:16px;
+  text-align:center;
+  border:1px solid #dce5eb;
+  border-radius:14px;
+  background:#f9f9f7;
+  outline:none;
 }
 
 .answer {
-  display: block;
-  width: 100%;
-  padding: 15px;
-  border: none;
-  border-radius: 14px;
-  margin-top: 11px;
+  display:block;
+  width:100%;
+  padding:16px;
+  border:0;
+  border-radius:13px;
+  margin-top:11px;
+  cursor:pointer;
+}
+
+.answer:disabled {
+  opacity:.65;
+  cursor:wait;
 }
 
 .yes {
-  background: #88b2ca;
-  color: #fff;
+  background:#89b3cc;
+  color:white;
 }
 
 .no {
-  background: #eee9e2;
-  color: #61788b;
+  background:#eee9e2;
+  color:#617b8f;
 }
 
-#replyMessage {
-  font-size: 12px;
-  line-height: 1.6;
-  margin-top: 12px;
-  min-height: 12px;
+#reply {
+  font-size:13px;
+  line-height:1.5;
+  margin-top:15px;
+  min-height:10px;
 }
 
-/* =========================
-   АНИМАЦИИ
-========================= */
+/* АНИМАЦИИ */
 
 .reveal {
-  opacity: 0;
-  transform: translateY(28px);
+  opacity:0;
+  transform:translateY(30px);
   transition:
     opacity .9s ease,
     transform .9s ease;
 }
 
 .reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
+  opacity:1;
+  transform:none;
 }
 
 @keyframes rise {
   from {
-    opacity: 0;
-    transform: translateY(25px);
+    opacity:0;
+    transform:translateY(20px)
   }
   to {
-    opacity: 1;
-    transform: translateY(0);
+    opacity:1;
+    transform:none
   }
 }
 
 @keyframes zoom {
-  from {transform: scale(1.06)}
-  to {transform: scale(1)}
+  from {transform:scale(1.06)}
+  to {transform:scale(1)}
 }
 
-/* =========================
-   МОБИЛЬНАЯ ВЕРСИЯ
-========================= */
+/* МОБИЛЬНАЯ ВЕРСИЯ */
 
 @media(max-width:450px) {
-  #hero {
-    min-height: 0;
-    max-height: none;
-    height: 100svh;
+  section {
+    padding-left:16px;
+    padding-right:16px;
   }
 
-  .hero-photo {
-    object-position: center center;
+  #invitation {padding-top:62px}
+
+  .invite-copy {
+    font-size:clamp(22px,5.6vw,27px);
   }
 
-  .hero-content {
-    padding-bottom:
-      max(58px, env(safe-area-inset-bottom));
-  }
+  .invite-copy p {margin-bottom:12px}
 
-  .hero-title {
-    font-size: clamp(48px, 12vw, 69px);
-  }
-
-  #invitation {
-    padding: 66px 16px 0;
-  }
-
-  .script {
-    margin-bottom: 12px;
-  }
-
-  .invite-text {
-    font-size: clamp(21px, 5.2vw, 26px);
-  }
-
-  .invite-text p {
-    margin-bottom: 12px;
-  }
-
-  .invite-photo {
-    max-width: 340px;
-  }
-
-  .date-line {
-    font-size: clamp(19px, 5vw, 26px);
-  }
-
-  .timeline::before {
-    left: 64px;
-  }
+  .timeline:before {left:65px}
 
   .event {
-    grid-template-columns: 52px 1fr;
-    gap: 28px;
+    grid-template-columns:52px 1fr;
+    gap:29px;
   }
 
-  .event-body::before {
-    left: -18px;
-  }
+  .what:before {left:-18px}
+  .when {font-size:16px}
 
-  .event-time {
-    font-size: 15px;
-  }
-
-  .photos img {
-    height: 170px;
-  }
-
-  .photos img:first-child {
-    height: 350px;
-  }
-
-  .photos img:nth-child(4),
-  .photos img:nth-child(5) {
-    height: 190px;
+  .date-line {
+    font-size:clamp(20px,5vw,25px);
   }
 }
 
 @media(prefers-reduced-motion:reduce) {
-  *,
-  *::before,
-  *::after {
-    animation: none !important;
-    transition: none !important;
+  *,*:before,*:after {
+    animation:none!important;
+    transition:none!important;
   }
 
   .reveal {
-    opacity: 1;
-    transform: none;
+    opacity:1;
+    transform:none;
   }
 }
 </style>
@@ -711,67 +514,41 @@ section {
 
 <body>
 
-<!-- МУЗЫКА -->
-<audio
-  id="music"
-  src="./music.mp3"
-  loop
-  preload="none">
-</audio>
+<audio id="music" src="./music.mp3" loop preload="none"></audio>
 
-<button
-  id="musicBtn"
-  aria-label="Музыканы қосу"
-  type="button">
+<button id="musicBtn" aria-label="Музыканы қосу" type="button">
   🔇
 </button>
 
-<div id="musicNotice" role="status"></div>
+<div id="audioError" role="status"></div>
 
 <main>
 
-<!-- 1. ГЛАВНЫЙ ЭКРАН -->
-<section id="hero" aria-label="Таирдің туған күні">
+<!-- 1. ГЛАВНАЯ ФОТОГРАФИЯ -->
 
-  <img
-    class="hero-photo"
-    src="./birthday-tair.png"
-    alt="Таир бірінші туған күніне арналған тортпен"
-  >
-
-  <div class="hero-shadow"></div>
-
-  <div class="hero-content">
-    <h1 class="hero-title">
-      Happy Tair's Birthday
-    </h1>
-  </div>
-
+<section id="hero">
+  <img src="./birthday-tair.png" alt="Таир туған күн тортымен">
+  <h1 class="hero-title">Happy Tair's Birthday</h1>
 </section>
 
 <!-- 2. ПРИГЛАШЕНИЕ -->
-<section id="invitation">
 
+<section id="invitation">
   <div class="inner reveal">
 
-    <h2 class="script">
-      Құрметті қонақтар!
-    </h2>
+    <h2 class="title">Құрметті қонақтар!</h2>
 
-    <div class="invite-text">
-
+    <div class="invite-copy">
       <p>
-        Сіздерді ұлымыз Таирдың жеке
-        мерекесіне арналған қуанышты
-        дастарханымыздың қадірлі
-        қонағы болуға шақырамыз!
+        Сіздерді ұлымыз Таирдың жеке мерекесіне
+        арналған қуанышты дастарханымыздың
+        қадірлі қонағы болуға шақырамыз!
       </p>
 
       <p>
         Бұл ерекше күнді жүрегімізге жақын
         жандармен бірге атап өткіміз келеді.
-        Сол жандардың қатарында
-        Сіз де барсыз!
+        Сол жандардың қатарында Сіз де барсыз!
       </p>
 
       <p>
@@ -779,44 +556,37 @@ section {
         ортамыздан табылсаңыз,
         біз үшін үлкен қуаныш болмақ!
       </p>
-
     </div>
 
-    <div style="color:var(--gold);font-size:22px;margin:17px 0 12px">
-      ✦
-    </div>
-
-    <!-- Реальная фотография мальчика.
-         Файл tair-full.png рядом с index.html -->
+    <div class="sparkle">✦</div>
 
     <img
       class="invite-photo"
       src="./tair-full.png"
       alt="Таир аюмен бірге"
-      loading="lazy"
-      onerror="this.onerror=null;this.src='./photos/tir_photo_3.png'"
+      onerror="this.style.display='none';document.getElementById('photoError').style.display='block'"
     >
 
-  </div>
+    <p id="photoError">
+      Фото не загрузилось: проверь, что tair-full.png
+      лежит рядом с index.html.
+    </p>
 
+  </div>
 </section>
 
 <!-- 3. ДАТА -->
-<section id="date">
 
+<section id="date">
   <div class="inner reveal">
 
-    <h2 class="day-x">
-      День X...
-    </h2>
+    <h2 class="day-x">День X...</h2>
 
     <p class="date-line">
-      <strong>28</strong> қараша 2026 ·
-      <strong>16:00</strong>
+      <b>28</b> қараша 2026 · <b>16:00</b>
     </p>
 
     <div class="calendar">
-
       <div class="week">
         <span>Дс</span>
         <span>Сс</span>
@@ -826,194 +596,103 @@ section {
         <span>Сб</span>
         <span>Жс</span>
       </div>
-
       <div class="dates" id="calendarDays"></div>
-
     </div>
 
     <div class="countdown">
-
-      <div>
-        <strong id="days">00</strong>
-        <small>КҮН</small>
-      </div>
-
-      <div>
-        <strong id="hours">00</strong>
-        <small>САҒАТ</small>
-      </div>
-
-      <div>
-        <strong id="minutes">00</strong>
-        <small>МИНУТ</small>
-      </div>
-
-      <div>
-        <strong id="seconds">00</strong>
-        <small>СЕКУНД</small>
-      </div>
-
+      <div><strong id="days">00</strong><small>КҮН</small></div>
+      <div><strong id="hours">00</strong><small>САҒАТ</small></div>
+      <div><strong id="minutes">00</strong><small>МИНУТ</small></div>
+      <div><strong id="seconds">00</strong><small>СЕКУНД</small></div>
     </div>
 
   </div>
-
 </section>
 
 <!-- 4. ПРОГРАММА ДНЯ -->
-<section id="program">
 
+<section id="program">
   <div class="inner reveal">
 
-    <h2 class="program-title">
-      Күн бағдарламасы
-    </h2>
+    <h2 class="program-title">Күн бағдарламасы</h2>
 
     <div class="timeline">
 
       <div class="event">
-        <span class="event-time">15:30</span>
-        <div class="event-body">
-          Қонақтарды қарсы алу
-        </div>
+        <span class="when">15:30</span>
+        <span class="what">Қонақтарды қарсы алу</span>
       </div>
 
       <div class="event">
-        <span class="event-time">16:00</span>
-        <div class="event-body">
-          Дастарханға жайғасу
-        </div>
+        <span class="when">16:00</span>
+        <span class="what">Дастарханға жайғасу</span>
       </div>
 
       <div class="event">
-        <span class="event-time">17:00</span>
-        <div class="event-body">
-          Торт кесу рәсімі 🎂
-        </div>
+        <span class="when">17:00</span>
+        <span class="what">Торт кесу рәсімі 🎂</span>
       </div>
 
       <div class="event">
-        <span class="event-time">17:40</span>
-        <div class="event-body">
-          Би, қызықты кеш ✨
-        </div>
+        <span class="when">17:40</span>
+        <span class="what">Би, қызықты кеш ✨</span>
       </div>
 
       <div class="event">
-        <span class="event-time">??:00</span>
-        <div class="event-body">
-          Керемет кештің де соңғы
-          нүктесін бірге қояйық!
-        </div>
+        <span class="when">??:00</span>
+        <span class="what">
+          Керемет кештің де соңғы нүктесін
+          бірге қояйық!
+        </span>
       </div>
 
     </div>
 
   </div>
-
 </section>
 
-<!-- 5. ФОТОГАЛЕРЕЯ -->
-<section id="gallery">
+<!-- 5. РЕСТОРАН -->
 
-  <div class="inner reveal">
-
-    <h2 class="gallery-title">
-      Бақытты сәттер
-    </h2>
-
-    <div class="photos">
-
-      <img
-        src="./photos/tir_photo_1.png"
-        alt="Таирдің фотосы 1"
-        loading="lazy"
-      >
-
-      <img
-        src="./photos/tir_photo_2.png"
-        alt="Таирдің фотосы 2"
-        loading="lazy"
-      >
-
-      <img
-        src="./photos/tir_photo_3.png"
-        alt="Таирдің фотосы 3"
-        loading="lazy"
-      >
-
-      <img
-        src="./photos/tir_photo_4.png"
-        alt="Таирдің фотосы 4"
-        loading="lazy"
-      >
-
-      <img
-        src="./photos/tir_photo_5.png"
-        alt="Таирдің фотосы 5"
-        loading="lazy"
-      >
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- 6. РЕСТОРАН -->
 <section id="place">
-
   <div class="inner reveal">
 
-    <h2 class="place-title">
-      Той өтетін мекенжай
-    </h2>
+    <h2 class="title">Той өтетін мекенжай</h2>
 
-    <div class="restaurant">
-      «Ырысты»
-    </div>
+    <div class="restaurant">«Ырысты»</div>
 
     <p class="address">
-      Мейрамханасы
-      <br>
-      Астана қаласы
-      <br>
+      Мейрамханасы<br>
+      Астана қаласы<br>
       Пушкин көшесі, 27/2
     </p>
 
     <a
-      class="map-link"
-      href="https://2gis.kz/astana/search/%D0%AB%D1%80%D1%8B%D1%81%D1%82%D1%8B%20%D0%9F%D1%83%D1%88%D0%BA%D0%B8%D0%BD%D0%B0%2027%2F2"
+      class="map"
       target="_blank"
       rel="noopener noreferrer"
+      href="https://2gis.kz/astana/search/%D0%AB%D1%80%D1%8B%D1%81%D1%82%D1%8B%20%D0%9F%D1%83%D1%88%D0%BA%D0%B8%D0%BD%D0%B0%2027%2F2"
     >
       📍 2ГИС арқылы ашу
     </a>
 
   </div>
-
 </section>
 
-<!-- 7. ПОДТВЕРЖДЕНИЕ УЧАСТИЯ -->
-<section id="rsvp">
+<!-- 6. АНКЕТА -->
 
+<section id="rsvp">
   <div class="inner reveal">
 
-    <h2 class="script">
+    <h2 class="title">
       Қуанышымызға ортақ боласыз ба?
     </h2>
-
-    <p class="rsvp-desc">
-      Келетініңізді алдын ала
-      хабарлауыңызды сұраймыз ❤️
-    </p>
 
     <div class="form">
 
       <input
         id="guestName"
-        type="text"
-        placeholder="Аты-жөніңіз"
         maxlength="100"
+        placeholder="Аты-жөніңіз"
         autocomplete="name"
         aria-label="Аты-жөніңіз"
       >
@@ -1034,12 +713,11 @@ section {
         Өкінішке қарай, келе алмаймын
       </button>
 
-      <div id="replyMessage" role="status"></div>
+      <div id="reply" role="status" aria-live="polite"></div>
 
     </div>
 
   </div>
-
 </section>
 
 </main>
@@ -1047,202 +725,223 @@ section {
 <script>
 'use strict';
 
-// =============================
-// НАСТРОЙКИ
-// =============================
+// =========================================
+// GOOGLE SHEETS
+// =========================================
 
-// Вставь сюда URL своего Google Apps Script,
-// когда настроишь сохранение ответов.
-const GOOGLE_SCRIPT_URL = '';
+// СЮДА ВСТАВИТЬ URL GOOGLE APPS SCRIPT,
+// КОТОРЫЙ ЗАКАНЧИВАЕТСЯ НА /exec
 
-// =============================
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwALvKMwY-ivO7axi44Zjop8AeEpaNHjyepTjcc--E7r2OvDx1vITxmbwfXcSMSz59m7Q/exec';
+
+// =========================================
 // МУЗЫКА
-// =============================
+// =========================================
 
 const audio = document.getElementById('music');
 const musicBtn = document.getElementById('musicBtn');
-const musicNotice = document.getElementById('musicNotice');
+const audioError = document.getElementById('audioError');
 
 audio.volume = 0.5;
 
 audio.addEventListener('play', () => {
   musicBtn.textContent = '🔊';
-  musicBtn.setAttribute('aria-label', 'Музыканы өшіру');
-  musicNotice.style.display = 'none';
+  audioError.style.display = 'none';
 });
 
 audio.addEventListener('pause', () => {
   musicBtn.textContent = '🔇';
-  musicBtn.setAttribute('aria-label', 'Музыканы қосу');
 });
 
-async function startAudio() {
+musicBtn.addEventListener('click', async () => {
+  if (!audio.paused) {
+    audio.pause();
+    return;
+  }
+
   try {
     await audio.play();
-  } catch (err) {
-    musicNotice.style.display = 'block';
-    musicNotice.textContent =
-      'Музыка қосылмады. music.mp3 файлын тексеріңіз.';
-    console.error(err);
-  }
-}
-
-musicBtn.addEventListener('click', () => {
-  if (audio.paused) {
-    startAudio();
-  } else {
-    audio.pause();
+  } catch (e) {
+    audioError.textContent =
+      'Музыка не загрузилась. Проверь music.mp3.';
+    audioError.style.display = 'block';
   }
 });
 
-// =============================
+// =========================================
 // АНИМАЦИИ
-// =============================
+// =========================================
 
-const reveal = document.querySelectorAll('.reveal');
+const all = document.querySelectorAll('.reveal');
 
 if ('IntersectionObserver' in window) {
-
-  const observer = new IntersectionObserver(
-    items => items.forEach(item => {
-
-      if (item.isIntersecting) {
-        item.target.classList.add('visible');
-        observer.unobserve(item.target);
+  const ob = new IntersectionObserver(es => {
+    es.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        ob.unobserve(e.target);
       }
+    });
+  }, {threshold: .08});
 
-    }),
-    {threshold: .08}
-  );
-
-  reveal.forEach(el => observer.observe(el));
-
+  all.forEach(x => ob.observe(x));
 } else {
-
-  reveal.forEach(el => el.classList.add('visible'));
-
+  all.forEach(x => x.classList.add('visible'));
 }
 
-// =============================
+// =========================================
 // КАЛЕНДАРЬ
-// =============================
+// =========================================
 
-// 1 ноября 2026 — воскресенье.
-// 28 ноября 2026 — суббота.
-
-const calendar = document.getElementById('calendarDays');
+const cal = document.getElementById('calendarDays');
 
 for (let i = 0; i < 6; i++) {
-  calendar.appendChild(document.createElement('span'));
+  cal.appendChild(document.createElement('span'));
 }
 
 for (let i = 1; i <= 30; i++) {
+  let c = document.createElement('span');
+  c.textContent = i;
 
-  const el = document.createElement('span');
+  if (i === 28) c.className = 'today';
 
-  el.textContent = i;
-
-  if (i === 28) {
-    el.className = 'special';
-  }
-
-  calendar.appendChild(el);
+  cal.appendChild(c);
 }
 
-// =============================
+// =========================================
 // ОБРАТНЫЙ ОТСЧЁТ
-// =============================
+// =========================================
 
 const EVENT =
   new Date('2026-11-28T16:00:00+05:00').getTime();
 
 function tick() {
-
   let d = Math.max(0, EVENT - Date.now());
 
-  const values = {
+  const vals = {
     days: Math.floor(d / 86400000),
     hours: Math.floor(d / 3600000) % 24,
     minutes: Math.floor(d / 60000) % 60,
     seconds: Math.floor(d / 1000) % 60
   };
 
-  Object.entries(values).forEach(([key, val]) => {
-
-    document.getElementById(key).textContent =
-      String(val).padStart(2, '0');
-
+  Object.entries(vals).forEach(([k,v]) => {
+    document.getElementById(k).textContent =
+      String(v).padStart(2,'0');
   });
-
 }
 
 tick();
-setInterval(tick, 1000);
+setInterval(tick,1000);
 
-// =============================
-// RSVP
-// =============================
+// =========================================
+// ОТПРАВКА ОТВЕТОВ В GOOGLE SHEETS
+// =========================================
 
-const guestName = document.getElementById('guestName');
-const reply = document.getElementById('replyMessage');
+const nameInput = document.getElementById('guestName');
+const reply = document.getElementById('reply');
 
-document.querySelectorAll('[data-answer]').forEach(
-  btn => btn.addEventListener('click', async () => {
+let pending = false;
 
-    const name = guestName.value.trim();
+function saveRsvp(answer) {
 
-    if (!name) {
-      reply.textContent = 'Аты-жөніңізді енгізіңіз 🤍';
-      return;
-    }
+  const name = nameInput.value.trim();
 
-    if (!GOOGLE_SCRIPT_URL) {
-      reply.textContent =
-        'Жауапты жіберу үшін Google Sheets қосу қажет.';
-      return;
-    }
+  if (!name) {
+    reply.textContent = 'Аты-жөніңізді енгізіңіз 🤍';
+    nameInput.focus();
+    return;
+  }
 
-    reply.textContent = 'Жіберілуде...';
+  if (
+    !GOOGLE_SCRIPT_URL ||
+    !GOOGLE_SCRIPT_URL.includes('/exec')
+  ) {
+    reply.textContent =
+      'Жауапты жіберу әлі қосылмаған. ' +
+      'Google Apps Script /exec сілтемесін орнатыңыз.';
+    return;
+  }
 
-    try {
+  if (pending) return;
 
-      const res = await fetch(GOOGLE_SCRIPT_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'text/plain;charset=utf-8'
-        },
-        body: JSON.stringify({
-          name,
-          answer: btn.dataset.answer,
-          event: 'Таир — 1 жас'
-        })
-      });
+  pending = true;
+  reply.textContent = 'Жіберілуде...';
 
-      if (!res.ok) {
-        throw Error('HTTP ' + res.status);
-      }
+  const buttons = [
+    ...document.querySelectorAll('[data-answer]')
+  ];
 
-      const payload = await res.json();
+  buttons.forEach(x => x.disabled = true);
 
-      if (payload.ok !== true) {
-        throw Error('Not confirmed');
-      }
+  const key = 'tairRsvp_' + Date.now();
+  const script = document.createElement('script');
 
+  let completed = false;
+
+  const cleanup = () => {
+    clearTimeout(timer);
+    delete window[key];
+    script.remove();
+    pending = false;
+    buttons.forEach(x => x.disabled = false);
+  };
+
+  window[key] = function(data) {
+    if (completed) return;
+
+    completed = true;
+    cleanup();
+
+    if (data && data.ok === true) {
       reply.textContent =
         'Жауабыңыз үшін рақмет! ❤️';
-
-    } catch (err) {
-
-      console.error(err);
-
+    } else {
       reply.textContent =
-        'Жауап жіберілмеді. Қайта көріңіз.';
-
+        'Жауап сақталмады. Қайталап көріңіз.';
     }
+  };
 
-  })
-);
+  const timer = setTimeout(() => {
+    if (completed) return;
+
+    completed = true;
+    cleanup();
+
+    reply.textContent =
+      'Серверден жауап келмеді. ' +
+      'Сақталғанын тексеріп, қажет болса қайталап көріңіз.';
+  }, 12000);
+
+  script.onerror = () => {
+    if (completed) return;
+
+    completed = true;
+    cleanup();
+
+    reply.textContent =
+      'Қосылу қатесі. Скрипттің /exec сілтемесін тексеріңіз.';
+  };
+
+  const u = new URL(GOOGLE_SCRIPT_URL);
+
+  u.searchParams.set('action', 'rsvp');
+  u.searchParams.set('name', name);
+  u.searchParams.set('answer', answer);
+  u.searchParams.set('callback', key);
+  u.searchParams.set('requestId', key);
+
+  script.src = u.toString();
+
+  document.body.appendChild(script);
+}
+
+document.querySelectorAll('[data-answer]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    saveRsvp(btn.dataset.answer);
+  });
+});
+
 </script>
-
 </body>
 </html>
